@@ -1,0 +1,19 @@
+{
+  "day": "2026-11-20",
+  "claims": [
+    {
+      "app": "REQ9",
+      "runner": "R8",
+      "bib": 21,
+      "group": "relay",
+      "use": "private"
+    },
+    {
+      "app": "REQ10",
+      "runner": "R7",
+      "bib": 21,
+      "group": "half",
+      "use": "public"
+    }
+  ]
+}

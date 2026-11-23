@@ -1,0 +1,333 @@
+{
+  "phases": [
+    "first",
+    "change"
+  ],
+  "routes": [
+    {
+      "path": "/camera/catalog",
+      "method": "GET",
+      "status": 200,
+      "data": [
+        {
+          "photo": "a10",
+          "camera": "K",
+          "run": "k3",
+          "tick": 2100,
+          "checkpoint": "B",
+          "preview": "/previews/a10.svg",
+          "claim": "K10",
+          "expires": "10:17",
+          "bibs": [
+            {
+              "bib": 21,
+              "x": 3,
+              "y": 2,
+              "w": 8,
+              "h": 10
+            },
+            {
+              "bib": 22,
+              "x": 15,
+              "y": 2,
+              "w": 5,
+              "h": 10
+            }
+          ]
+        },
+        {
+          "photo": "a11",
+          "camera": "K",
+          "run": "k3",
+          "tick": 2600,
+          "checkpoint": "B",
+          "preview": "/previews/a11.svg",
+          "claim": "K11",
+          "expires": "10:17",
+          "bibs": [
+            {
+              "bib": 21,
+              "x": 3,
+              "y": 2,
+              "w": 8,
+              "h": 10
+            }
+          ]
+        },
+        {
+          "photo": "b41",
+          "camera": "P",
+          "run": "p4",
+          "tick": 2700,
+          "checkpoint": "D",
+          "preview": "/previews/b41.svg",
+          "claim": "P41",
+          "expires": "10:20",
+          "bibs": [
+            {
+              "bib": 21,
+              "x": 8,
+              "y": 2,
+              "w": 8,
+              "h": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/camera/clock",
+      "method": "GET",
+      "status": 200,
+      "data": [
+        {
+          "run": "k3",
+          "camera": "K",
+          "tick": 100,
+          "observed": "2026-11-20T09:13:00+08:00",
+          "precisionMs": 100
+        },
+        {
+          "run": "p4",
+          "camera": "P",
+          "tick": 700,
+          "observed": "2026-11-20T09:18:00+08:00",
+          "precisionMs": 60
+        }
+      ]
+    },
+    {
+      "path": "/camera/quota",
+      "method": "GET",
+      "status": 200,
+      "data": [
+        {
+          "camera": "K",
+          "remaining": 1
+        },
+        {
+          "camera": "P",
+          "remaining": 2
+        }
+      ]
+    },
+    {
+      "path": "/previews/a10.svg",
+      "method": "GET",
+      "status": 200,
+      "file": "a10-small.svg",
+      "mime": "image/svg+xml"
+    },
+    {
+      "path": "/camera/original",
+      "method": "GET",
+      "status": 200,
+      "params": {
+        "photo": "a10",
+        "claim": "K10"
+      },
+      "file": "a10.svg",
+      "mime": "image/svg+xml",
+      "once": true,
+      "useLimit": {
+        "group": "K",
+        "cap": 1
+      }
+    },
+    {
+      "path": "/previews/a11.svg",
+      "method": "GET",
+      "status": 200,
+      "file": "a11-small.svg",
+      "mime": "image/svg+xml"
+    },
+    {
+      "path": "/camera/original",
+      "method": "GET",
+      "status": 200,
+      "params": {
+        "photo": "a11",
+        "claim": "K11"
+      },
+      "file": "a11.svg",
+      "mime": "image/svg+xml",
+      "once": true,
+      "useLimit": {
+        "group": "K",
+        "cap": 1
+      }
+    },
+    {
+      "path": "/previews/b41.svg",
+      "method": "GET",
+      "status": 200,
+      "file": "b41-small.svg",
+      "mime": "image/svg+xml"
+    },
+    {
+      "path": "/camera/original",
+      "method": "GET",
+      "status": 200,
+      "params": {
+        "photo": "b41",
+        "claim": "P41"
+      },
+      "file": "b41.svg",
+      "mime": "image/svg+xml",
+      "once": true,
+      "useLimit": {
+        "group": "P",
+        "cap": 2
+      }
+    },
+    {
+      "path": "/registration",
+      "method": "GET",
+      "status": 200,
+      "phase": "change",
+      "data": [
+        {
+          "runner": "R7",
+          "bib": 21,
+          "group": "half",
+          "checkpoint": "D",
+          "fromTime": "09:00",
+          "untilTime": "09:25"
+        },
+        {
+          "runner": "R10",
+          "bib": 21,
+          "group": "relay",
+          "checkpoint": "B",
+          "fromTime": "09:12",
+          "untilTime": "09:14"
+        },
+        {
+          "runner": "R9",
+          "bib": 22,
+          "group": "relay",
+          "checkpoint": "B",
+          "fromTime": "09:12",
+          "untilTime": "09:14"
+        }
+      ]
+    },
+    {
+      "path": "/registration",
+      "method": "GET",
+      "status": 200,
+      "data": [
+        {
+          "runner": "R7",
+          "bib": 21,
+          "group": "half",
+          "checkpoint": "D",
+          "fromTime": "09:00",
+          "untilTime": "09:25"
+        },
+        {
+          "runner": "R8",
+          "bib": 21,
+          "group": "relay",
+          "checkpoint": "B",
+          "fromTime": "09:12",
+          "untilTime": "09:14"
+        },
+        {
+          "runner": "R9",
+          "bib": 22,
+          "group": "relay",
+          "checkpoint": "B",
+          "fromTime": "09:12",
+          "untilTime": "09:14"
+        }
+      ]
+    },
+    {
+      "path": "/consent",
+      "method": "GET",
+      "status": 200,
+      "phase": "change",
+      "data": [
+        {
+          "runner": "R8",
+          "private": true,
+          "public": true
+        },
+        {
+          "runner": "R9",
+          "private": false,
+          "public": false
+        },
+        {
+          "runner": "R7",
+          "private": true,
+          "public": true
+        },
+        {
+          "runner": "R10",
+          "private": true,
+          "public": false
+        }
+      ]
+    },
+    {
+      "path": "/consent",
+      "method": "GET",
+      "status": 200,
+      "data": [
+        {
+          "runner": "R8",
+          "private": true,
+          "public": true
+        },
+        {
+          "runner": "R9",
+          "private": false,
+          "public": true
+        },
+        {
+          "runner": "R7",
+          "private": true,
+          "public": true
+        }
+      ]
+    },
+    {
+      "path": "/published",
+      "method": "GET",
+      "status": 200,
+      "data": [
+        {
+          "link": "ln-34",
+          "photo": "a10",
+          "uses": [
+            "R8",
+            "R9"
+          ],
+          "delivery": "public"
+        },
+        {
+          "link": "ln-35",
+          "photo": "b41",
+          "uses": [
+            "R7"
+          ],
+          "delivery": "public"
+        }
+      ]
+    },
+    {
+      "path": "/photography/withdraw",
+      "method": "POST",
+      "status": 202,
+      "expectedBody": {
+        "link": "ln-34"
+      },
+      "receipt": {
+        "number": "WD-34",
+        "state": "withdrawn"
+      }
+    }
+  ]
+}
