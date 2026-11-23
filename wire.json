@@ -1,9 +1,70 @@
 {
   "phases": [
     "first",
-    "change"
+    "change",
+    "expired"
   ],
   "routes": [
+    {
+      "path": "/consent",
+      "method": "GET",
+      "status": 200,
+      "phase": "expired",
+      "data": [
+        {
+          "runner": "R8",
+          "private": true,
+          "public": true
+        },
+        {
+          "runner": "R9",
+          "private": false,
+          "public": false
+        },
+        {
+          "runner": "R7",
+          "private": true,
+          "public": true
+        },
+        {
+          "runner": "R10",
+          "private": true,
+          "public": false
+        }
+      ]
+    },
+    {
+      "path": "/registration",
+      "method": "GET",
+      "status": 200,
+      "phase": "expired",
+      "data": [
+        {
+          "runner": "R7",
+          "bib": 21,
+          "group": "half",
+          "checkpoint": "D",
+          "fromTime": "09:00",
+          "untilTime": "09:25"
+        },
+        {
+          "runner": "R10",
+          "bib": 21,
+          "group": "relay",
+          "checkpoint": "B",
+          "fromTime": "09:12",
+          "untilTime": "09:14"
+        },
+        {
+          "runner": "R9",
+          "bib": 22,
+          "group": "relay",
+          "checkpoint": "B",
+          "fromTime": "09:12",
+          "untilTime": "09:14"
+        }
+      ]
+    },
     {
       "path": "/camera/catalog",
       "method": "GET",
@@ -121,6 +182,19 @@
     {
       "path": "/camera/original",
       "method": "GET",
+      "status": 410,
+      "phase": "expired",
+      "data": {
+        "reason": "原件领取凭条已过期"
+      },
+      "params": {
+        "photo": "a10",
+        "claim": "K10"
+      }
+    },
+    {
+      "path": "/camera/original",
+      "method": "GET",
       "status": 200,
       "params": {
         "photo": "a10",
@@ -140,6 +214,19 @@
       "status": 200,
       "file": "a11-small.svg",
       "mime": "image/svg+xml"
+    },
+    {
+      "path": "/camera/original",
+      "method": "GET",
+      "status": 410,
+      "phase": "expired",
+      "data": {
+        "reason": "原件领取凭条已过期"
+      },
+      "params": {
+        "photo": "a11",
+        "claim": "K11"
+      }
     },
     {
       "path": "/camera/original",
@@ -327,6 +414,39 @@
       "receipt": {
         "number": "WD-34",
         "state": "withdrawn"
+      }
+    },
+    {
+      "path": "/camera/time",
+      "method": "GET",
+      "status": 200,
+      "phase": "first",
+      "data": {
+        "date": "2026-11-20",
+        "now": "10:14",
+        "zone": "+08:00"
+      }
+    },
+    {
+      "path": "/camera/time",
+      "method": "GET",
+      "status": 200,
+      "phase": "change",
+      "data": {
+        "date": "2026-11-20",
+        "now": "10:16",
+        "zone": "+08:00"
+      }
+    },
+    {
+      "path": "/camera/time",
+      "method": "GET",
+      "status": 200,
+      "phase": "expired",
+      "data": {
+        "date": "2026-11-20",
+        "now": "10:18",
+        "zone": "+08:00"
       }
     }
   ]
